@@ -5,3 +5,7 @@ Para poder ejecutar la página web tan solo tenemos que copiar todo el contenido
 
 
 Para ejecutarla tan solo tenéis que escribir en la terminal "ng s -o" y se os abrirá en vuestro navegador.
+
+Si no quieres descargar el código y tan solo quieres ver funcionar la página web, puede verlo desplegada en Netlify con el siguiente link
+
+https://youthful-spence-003e3d.netlify.app/
