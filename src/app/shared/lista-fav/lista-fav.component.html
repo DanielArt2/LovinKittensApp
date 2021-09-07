@@ -1,0 +1,25 @@
+<ng-template #contenido let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title"><img src="" ><img src="../assets/loveCat.jpg" >{{favoritos}} Favoritos</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span arial-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <table class="table">
+            <thead>
+                <th>Nombre</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of usersFav">
+                    <td>{{user.name}}</td>
+                    <td>{{user.status}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</ng-template>
+
+<button type="button" class="btn "[disabled]="favoritos < 1" (click)="modal.open(contenido)"><img src="../assets/loveCat.jpg" ></button>

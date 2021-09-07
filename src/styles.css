@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+.trans{
+    width: 400px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+  }
+
+  .info{
+    cursor: pointer; 
+  }
+
+  img{
+    width: 40px;
+  }
+
+

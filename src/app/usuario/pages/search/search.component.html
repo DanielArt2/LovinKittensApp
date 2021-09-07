@@ -1,0 +1,85 @@
+
+<app-header [titulo]="titulo" [gatokiller]="datosGatokiller"></app-header>
+<form>
+    <div class="row">
+        <div class="col-2"><button class="btn btn-primary position-absolute top-0 start-50 translate-middle" routerLink="">volver a Home</button></div>
+        <div class="col-5">
+            <form>
+                <input type="text" name="termino" placeholder="Introduce dueño" class="form-control" [(ngModel)]="termino" (input)="buscar()">
+            </form>
+        </div>
+        
+    </div>
+</form>
+<br>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-5">
+        <div class="alert alert-danger" *ngIf="hayError">
+            No se encontró usuarios que contengan {{termino}}
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="users.length > 0">
+    <div class="col-2"></div>
+    <div class="col-6 text-center animate__animated animate__fadeIn anmate__faster" infiniteScroll (scrolled)="mostrarMas()" >
+        <table class="table table-hover" >
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Género</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody class="info">
+                <tr *ngFor="let user of users" (click)="seleccion(user)">
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.status}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+     </div>
+     <div class="col-md-4 fixed-top-left animate__animated animate__fadeIn anmate__faster"  *ngIf="detalles">
+        <h2>Información de {{usuarioSeleccionado.name}}</h2>
+        <table class="table ">
+            <tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{usuarioSeleccionado.name}}</td>
+                    
+                <tr>
+                    <th>Email</th>
+                    <td>{{usuarioSeleccionado.email}}</td>
+                </tr>
+                <tr>
+                    <th>Género</th>
+                    <td>{{usuarioSeleccionado.gender}}</td>
+                </tr>
+                <tr> 
+                    <th>Status</th>
+                    <td>{{usuarioSeleccionado.status}}</td>
+                </tr>
+                <tr>
+                    <th>Teléfono</th>
+                    <td>{{numTelefono | number}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <div *ngIf="postUsuarios.length > 0">
+            <h3>Comentarios de {{usuarioSeleccionado.name}}</h3>
+            <ul >
+                <li  *ngFor="let coment of postUsuarios">{{coment.title}}<hr></li>
+                
+            </ul>
+        </div>
+        <button class="btn btn-warning center" (click)="aniadirFav()">Añadir a favoritos</button>
+    </div>  
+
+</div>
+  
