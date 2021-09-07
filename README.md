@@ -8,4 +8,4 @@ Para ejecutarla tan solo tenéis que escribir en la terminal "ng s -o" y se os a
 
 Si no quieres descargar el código y tan solo quieres ver funcionar la página web, puede verlo desplegada en Netlify con el siguiente link
 
-https://youthful-spence-003e3d.netlify.app/
+https://lovinkittensapp.netlify.app/
